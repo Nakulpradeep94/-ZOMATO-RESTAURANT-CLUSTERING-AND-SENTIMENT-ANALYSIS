@@ -46,5 +46,24 @@ Zomato is an Indian restaurant aggregator and food delivery start-up founded by 
 * Most of the reviews are posted during weekends(i.e. Saturday and Sunday)
 * The majority of reviews are posted at night from 9 to 11pm.
 * The restaurant with highest average rating from the given dataset is AB’s –Absolute Barbecues with a rating of 4.88
-* 
 
+# Summary
+Clustering of the dataset was done by k means clustering initially. The number of clusters was found out with the help of elbow curve and Silhouette coefficient method. The optimum number of clusters was found as 6 since it is the point after which elbow gradient stabilises and silhouette coefficient is more. The 6 clusters were formed based on their cost per head. Their cluster distribution was visualised with respect to cost, number of cuisines and name of restaurant. Then hierarchical clustering was done with the number of clusters specified as 6. The number of clusters were taken as 6 as we could use it to compliment our clustering done through K means. 
+
+The sentiment analysis of review column is to be done, before doing so the following transformations are done.
+* Removing urls from dataset
+* Removing punctuations and special character
+* Removing emoji pattern from given string
+* Removing words with length less than or equal to 2.
+* Lemmatization
+
+Then dataset is split into two: train dataset and test dataset for the classification analysis. 
+Then the text was converted from words into numbers by the process called Vectorization. The vectorizing method used here is Count vectorizer.The vectorized dataset is used here and experimented with various models like Logistic Regression, Naïve Bayes Classifier, XG Boost and Random Forest. Hyper parameter tuning was also done on all of them. The evaluation metrics used here for checking the predicted model accuracy are Accuracy score, recall, precision and F1 score. 
+
+
+# Conclusion
+
+* The clustering is done and the restaurants are divided in to 6 different clusters or groups based on the number of cuisines and cost per head.
+* Sometimes people give good rating even when their reviews are bad or negative
+* The Naive Bayes gives the best model for sentimental analysis for the given dataset.
+* The Naive Bayes model gives an accuracy,precision, recall score of 0.92 
